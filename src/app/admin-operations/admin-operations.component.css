@@ -1,0 +1,55 @@
+ul {  
+    background-color:black;  
+  }  
+    
+  li {  
+   text-align: center;
+ padding-top:10px ;
+ padding-bottom:10px ;
+ padding-left:50px ;
+
+  }  
+    
+  
+  li a:hover {  
+    background-color: grey;
+   
+  }  
+  
+ 
+
+  
+  main{
+    min-height: 530px;
+    
+   
+  }
+  footer{
+    min-height:200px;
+    width: auto;
+  }
+  
+  
+  .a{
+    background-color: lightgrey;
+      background-image: url("/assets/stethoscope.png");
+         
+          min-height: 550px;
+          width: 100%;
+          image-orientation: flip;
+          background-repeat: no-repeat;
+      
+  }
+  img{
+    width: 100%;
+    opacity: 1.0;
+  }
+   
+ 
+  .marqueething{
+    background-color: lightgrey;
+  }
+  footer{
+    min-height: 70px;
+    background-color:black;
+  }

@@ -1,0 +1,53 @@
+.a{
+    background-color: lightgray; 
+    background-image: url("/assets/stethoscope.png");
+         
+    min-height: 550px;
+    width: 100%;
+    image-orientation: flip;
+    background-repeat: no-repeat;
+    background-image: cross-fade();
+  
+}
+strong{
+    padding-left: 125px;
+}
+input{
+   padding-left: 125px;
+}
+.radio{
+padding-left: 50px;
+}
+form{
+    background-color: lightblue;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.active{
+    color: white;
+}
+  
+
+
+.alignment{
+    padding-left: 110px;
+}
+button{
+    margin-left: 120px;
+    padding-left: 20px;
+    padding-right:20px ;
+}
+.b{
+    margin-left: 510px;
+}
+
+main{
+    min-height: 1000px;
+}
+h4{
+    padding-left: 75px;
+}
+footer{
+    min-height: 98px;
+    background-color:black;
+  }

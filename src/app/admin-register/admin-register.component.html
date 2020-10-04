@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" >
+    <div class="navbar-brand"><img src="/assets/medplus.png" alt=""></div>
+      <ul class="navbar-nav">
+        <li class="nav-item active" routerLink="/customerregister" >
+        <div class="col-md-4">CUSTOMER REGISTRER</div>
+        </li>
+        <li class="nav-item active" routerLink="/adminregister" >
+          <div class="col-md-4">ADMIN REGISTER</div>
+        </li>
+        <li class="nav-item active" routerLink="/login"  >
+          <div class="col-md-4">LOGIN</div>
+        </li>
+      </ul>
+    </nav>
+    
+<div class="row mx-auto marqueething vdc-standard">
+    <marquee onmouseover="this.stop();" onmouseout="this.start();">
+        
+        <span style="color:red;"> 
+            Important Information:- 
+            As a precautionary measure, our Customer Care center (040 - 21000000) will be operational with limited staff. We request you to contact listed center for any queries or information.   
+        </span>
+        
+    </marquee>
+
+</div>
+<div class="a" >
+    <div class="b">
+<div class="col-md-5">
+        <div><h4>ADMIN REGISTRATION!!</h4></div>
+    <form #registerUser="ngForm" class="form-group" (ngSubmit)="onClickSubmit(registerUser.value)" >
+        <div>
+                <label for="userName"><strong>User Name</strong></label>
+                <input id="userName" type="text" name="userName" placeholder="User Name"
+                class="form-control" ngModel #userName="ngModel" required [ngClass]="{'is-invalid':userName.touched && userName.invalid}">
+                    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+                                <div *ngIf="userName.errors.required" style="color: red;">
+                                        User Name is required.
+                                </div>
+                
+                                <div *ngIf="userName.errors.pattern">
+                                        UserName should start with Captial Letter and<br> Range must be 6 to 30
+                                </div>
+                    </div>      
+        </div>
+        <div> 
+            <label for="userPassword"><strong>Password</strong></label>
+            <input id="userPassword" type="password" name="userPassword" placeholder="Password"
+                class="form-control" ngModel #userPassword="ngModel" [ngClass]="{'is-invalid':userPassword.touched && userPassword.invalid}" required>
+                    <div *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched)">
+                                <div *ngIf="userPassword.errors.required" style="color: red;">
+                                        userPassword is required.
+                               </div>
+                               <div *ngIf="userPassword.errors.pattern" >
+                                        Password must contain one number,one alphabet,<br>one special
+                                        character and size should be 8 to 14 Range
+                                        
+                               </div>
+                    </div>
+        </div>
+        <div>
+                <label for="contactNumber"><strong>Contact Number</strong></label>
+                <input id="contactNumber" type="number" name="contactNumber" placeholder="Contact Number" pattern="[6789][0-9]{9}"
+                    class="form-control" ngModel #contactNumber="ngModel" [ngClass]="{'is-invalid':contactNumber.touched && contactNumber.invalid}" required>
+                    <div *ngIf="contactNumber.invalid && (contactNumber.dirty || contactNumber.touched)">
+                                <div *ngIf="contactNumber.errors.required" style="color: red;">
+                                    Contact Number is required.
+                                </div>
+                                <div *ngIf="contactNumber.errors.pattern">
+                                    Phone number should be 10 digits
+                                </div>
+                    </div>
+        </div>
+        <div>
+                <label for="userEmail"><strong>Email Address</strong></label>
+                <input id="userEmail" type="email" name="userEmail" placeholder="Email Address" pattern="[a-zA-z][a-zA-Z0-9._]*[@]gmail.com"
+                class="form-control" ngModel #userEmail="ngModel" [ngClass]="{'is-invalid':userEmail.touched && userEmail.invalid}" required>
+                    <div *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)">
+                                <div *ngIf="userEmail.errors.required" style="color: red;">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="userEmail.errors.pattern" >
+                                    Email must only end with @gmail.com
+                                </div>
+                    </div>     
+        </div>
+        
+    
+        <div>
+                <label for="age"><strong>Age</strong></label>
+                <input id="age" type="number" name="age" placeholder="Age" min="11" max="100"
+                    class="form-control" ngModel #age="ngModel" [ngClass]="{'is-invalid':age.touched && userPassword.invalid}" required>
+                    <div *ngIf="age.invalid && (age.dirty || age.touched)">
+                                <div *ngIf="age.errors.required" style="color: red;">
+                                    Age is required.
+                                </div>
+                                <div *ngIf="age.errors.min">
+                                    Age must be more than 11
+                                </div>
+                                <div *ngIf="age.errors.max">
+                                    Age must be less than 11
+                                </div>
+                    </div>
+    </div>
+    <div>
+                <label for="gender" ><strong>Gender  &nbsp;&nbsp; &nbsp;&nbsp;</strong></label>
+                <br>
+                <input type="radio" id="gender" value="male"  name="gender" ngModel #gender="ngModel" required  >
+                <label for="male">Male &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="radio" id="gender" value="female" name="gender" ngModel #gender="ngModel">
+                <label for="male">Female</label>
+    </div>
+    <div>
+        <label for="passkey" ><strong>PASS KEY</strong></label>
+        <input type="text" id="passKey"  name="passKey" ngModel #passkey="ngModel" required >
+
+        <div *ngIf="passkey.invalid&&passkey.touched">
+            ENTER PASSKEY
+        </div>
+</div>
+    <div>
+            <button type="submit" class="btn btn-success" [disabled]="registerUser.invalid" >Register</button>
+    </div>
+ 
+</form>
+</div>
+</div>
+
+<footer>
+    <app-footer></app-footer>
+</footer>
